@@ -7,7 +7,7 @@ import json
 TOKEN = "8671963553:AAHYOpgs4ClQ_1CSQSRr2TstJKBApmFek2U"
 
 # YOUR API URL (running locally)
-API_BASE_URL = "http://localhost:8000"
+API_BASE_URL = "https://my-auth-api.onrender.com"  # Use YOUR actual Render URL
 
 user_sessions = {}
 

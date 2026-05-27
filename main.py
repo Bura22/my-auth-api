@@ -280,6 +280,8 @@ async def register_user(user_id: str, phone_number: str, name: str, db: Session 
     
     return {"success": True, "message": f"User {name} registered successfully"}
 
-#if __name__ == "__main__":
- #   import uvicorn
-  #  uvicorn.run(app, host="0.0.0.0", port=8000)
+if __name__ == "__main__":
+    import uvicorn
+    import os
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
