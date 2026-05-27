@@ -1,0 +1,28 @@
+services:
+  # Auth API Service
+  - type: web
+    name: auth-api
+    runtime: python
+    repo: https://github.com/YOUR_USERNAME/my-auth-api
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+
+  # Telegram Bot Service
+  - type: web
+    name: telegram-bot
+    runtime: python
+    repo: https://github.com/YOUR_USERNAME/my-auth-api
+    branch: main
+    buildCommand: pip install -r requirements_bot.txt
+    startCommand: python telegram_bot.py
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        value: YOUR_BOT_TOKEN_HERE  # Replace with your actual token
+      - key: API_BASE_URL
+        value: https://auth-api.onrender.com  # Update after API deploys
+      - key: PYTHON_VERSION
+        value: 3.11.0
